@@ -1,0 +1,53 @@
+{
+  "name": "tokenpacer",
+  "version": "0.1.0",
+  "description": "Stay under LLM rate limits: requests-per-minute and tokens-per-minute pacing, concurrency caps and retries that honor Retry-After for OpenAI, Anthropic and any API. Zero dependencies.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "llm",
+    "rate-limit",
+    "openai",
+    "anthropic",
+    "tokens-per-minute",
+    "retry",
+    "backoff",
+    "429",
+    "throttle"
+  ],
+  "author": "Yago de Jesus Martins",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yagodejesus/tokenpacer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yagodejesus/tokenpacer/issues"
+  },
+  "homepage": "https://github.com/yagodejesus/tokenpacer#readme",
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
+  }
+}
